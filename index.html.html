@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="google-site-verification" content="your-code-here">
+    <title>Professional Video Editor for YouTube | ACE editz</title>
+    <meta name="description" content="Professional video editing for YouTube gaming videos, reels, and shorts. Improve CTR and retention with ACE editz.">
+    <meta name="keywords" content="video editor, youtube video editor, gaming editor, reels editor, freelance video editor">
+    <meta name="author" content="ACE editz">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #181818;
+            color: #fff;
+        }
+        header {
+            background: #222;
+            padding: 30px 0 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 8px #0002;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.8rem;
+            letter-spacing: 2px;
+            font-weight: 700;
+        }
+
+        header h1 a {
+            color: #00ffe7;
+            text-decoration: none;
+        }
+
+        header h1 a:hover {
+            opacity: 0.85;
+        }
+
+        nav {
+            margin-top: 15px;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 18px;
+            font-size: 1.1rem;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #00ffe7;
+        }
+
+        nav a.active {
+            color: #00ffe7;
+            position: relative;
+        }
+
+        nav a.active::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -5px;
+            width: 0;
+            height: 2px;
+            background: #00ffe7;
+            transition: width 0.3s ease, left 0.3s ease;
+        }
+
+        nav a:hover::after,
+        nav a.active::after {
+            width: 90%;
+            left: 5%;
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 350px;
+            background: linear-gradient(120deg, #00ffe7 0%, #181818 100%);
+            color: #181818;
+            text-align: center;
+        }
+        .hero h2 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 20px auto;
+        }
+        .btn {
+            background: #00ffe7;
+            color: #181818;
+            padding: 12px 32px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn:hover {
+            background: #00bfae;
+        }
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 32px;
+            padding: 50px 10px;
+            background: #1e1e1e;
+        }
+        .feature-card {
+            background: #232323;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px #0003;
+            padding: 32px 24px;
+            max-width: 320px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .feature-card:hover {
+            transform: translateY(-8px) scale(1.03);
+        }
+        .feature-card h3 {
+            color: #00ffe7;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+        .feature-card p {
+            color: #ccc;
+            font-size: 1rem;
+        }
+        footer {
+            background: #181818;
+            color: #888;
+            text-align: center;
+            padding: 24px 0 12px 0;
+            font-size: 1rem;
+            margin-top: 40px;
+        }
+        @media (max-width: 900px) {
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2rem; }
+            .hero h2 { font-size: 1.6rem; }
+            .hero p { font-size: 1rem; }
+            .btn { padding: 10px 22px; font-size: 1rem; }
+            .feature-card, .pricing-card, .testimonial-card { width: 100%; max-width: 100%; }
+            .features, #testimonials, #why-choose, #stats, #guarantee, #thumbnails { padding: 30px 12px; }
+        }
+
+        /* New animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hero {
+            animation: gradientShift 6s ease infinite;
+            background-size: 200% 200%;
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 1s ease-out both;
+            animation-delay: var(--stagger-delay, 0s);
+        }
+
+        .animate-scaleIn {
+            animation: scaleIn 0.8s ease-out both;
+            animation-delay: var(--stagger-delay, 0s);
+        }
+
+        .animate-slideInRight {
+            animation: slideInRight 0.8s ease-out both;
+            animation-delay: var(--stagger-delay, 0s);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 4px 20px rgba(0, 255, 231, 0.3);
+        }
+
+        .pricing-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .section-subtitle {
+            color: #a7f4e4;
+            font-size: 1rem;
+            margin-top: -8px;
+            opacity: 0.95;
+        }
+
+        .section-separator {
+            position: relative;
+            width: 90px;
+            height: 3px;
+            background: #00ffe7;
+            margin: 12px auto 24px;
+            border-radius: 999px;
+            overflow: hidden;
+        }
+
+        .section-separator::before {
+            content: '';
+            position: absolute;
+            left: -90px;
+            top: 0;
+            width: 90px;
+            height: 3px;
+            background: #7dd3fc;
+            animation: stretchLine 1.5s infinite ease;
+        }
+
+        section {
+            padding-top: 70px;
+            padding-bottom: 70px;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 1100px;
+        }
+
+        .section-block {
+            margin-bottom: 32px;
+        }
+
+        @keyframes stretchLine {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(180px); }
+            100% { transform: translateX(0); }
+        }
+
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(25px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        .animate-scaleIn {
+            animation: scaleIn 0.8s ease-out both;
+        }
+
+        .animate-slideInRight {
+            animation: slideInRight 0.8s ease-out both;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 25px rgba(0, 255, 231, 0.4);
+        }
+
+        #progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: #00ffe7;
+            z-index: 1000;
+            transition: width 0.1s ease;
+        }
+
+        #cursor-glow {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: #00ffe7;
+            border-radius: 50%;
+            opacity: 0.5;
+            filter: blur(5px);
+            pointer-events: none;
+            z-index: 999;
+            transition: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="progress-bar"></div>
+    <div id="cursor-glow"></div>
+    <header>
+        <h1><a href="#" id="logo-link">ACE editz</a></h1>
+        <nav>
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero" data-animation="scale">
+        <h2 style="font-size:3rem;">Professional Video Editing Services</h2>
+        <p class="section-subtitle">Increase CTR & Retention with Pro-Level Edits</p>
+        <div class="section-separator"></div>
+        <p>Specializing in YouTube gaming videos, reels, and shorts. Transform your raw footage into stunning videos with ACE editz, the top video editor for YouTube and gaming content. I’m a freelance video editor in India, focused on increasing CTR and retention for your channel.</p>
+        <a href="mailto:acegamingyt6967@gmail.com" class="btn">Get Your Video Edited Today</a>
+    </section>
+
+    <section id="before-after" style="padding: 50px 20px; background: #1e1e1e; text-align: center;">
+        <h2 style="color:#00ffe7; margin-bottom: 2rem;">Before vs After</h2>
+        <p style="color:#ccc; max-width: 800px; margin: 0 auto 3rem;">See the transformation! From raw footage to polished videos that captivate audiences.</p>
+        <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+            <div style="text-align: center;">
+                <h3 style="color:#fff;">Before</h3>
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjNDQ0Ii8+Cjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiNmZmYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5SYXcgRm9vdGFnZTwvdGV4dD4KPC9zdmc+" alt="Before - Raw Footage" style="max-width: 300px; border-radius: 8px;">
+            </div>
+            <div style="text-align: center;">
+                <h3 style="color:#00ffe7;">After</h3>
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDMwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjMDAwIi8+Cjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTgiIGZpbGw9IiMwMGZmZTciIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5FZGl0ZWQgVmlkZW88L3RleHQ+Cjwvc3ZnPg==" alt="After - Edited Video" style="max-width: 300px; border-radius: 8px;">
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features" style="padding: 50px 10px; background: #181818;">
+        <div style="width:100%; text-align:center; margin-bottom:1rem;">
+            <h2 style="color:#00ffe7; margin:0;">Apps I Use</h2>
+            <p style="color:#ccc; max-width:700px; margin:0.6rem auto;">These are the main tools I use to create professional videos, animations, and audio tracks.</p>
+        </div>
+        <div class="feature-card" style="--delay:1">
+            <h3>DaVinci Resolve</h3>
+            <p>Industry-leading color grading, editing, and visual effects for cinematic video production.</p>
+        </div>
+        <div class="feature-card" style="--delay:2">
+            <h3>Kdenlive</h3>
+            <p>Reliable open-source editor for fast workflow and flexible timeline management.</p>
+        </div>
+        <div class="feature-card" style="--delay:3">
+            <h3>Natron</h3>
+            <p>Powerful compositing software for visual effects and advanced node-based editing.</p>
+        </div>
+        <div class="feature-card" style="--delay:4">
+            <h3>Blender</h3>
+            <p>Complete 3D suite for motion graphics, camera tracking, and animated visuals.</p>
+        </div>
+        <div class="feature-card" style="--delay:5">
+            <h3>FL Studio</h3>
+            <p>Professional audio production and mixing with intuitive beat-making workflow.</p>
+        </div>
+    </section>
+
+    <section id="portfolio" style="padding: 50px 20px; background: #181818; text-align: center;">
+        <h2 style="color:#00ffe7; margin-bottom: 2rem;">Portfolio</h2>
+        <p style="color:#ccc; max-width: 800px; margin: 0 auto 1.5rem;">Showcasing YouTube edits, shorts, and gaming edits that drive engagement and views.</p>
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <div style="background: #222; padding: 16px; border-radius: 12px; width: 250px; text-align: left;">
+                <h3 style="color:#00ffe7;">YouTube Edits</h3>
+                <p style="color:#ccc;">Cinematic pacing, hooks, and CTR-focused chapters for long-form content.</p>
+            </div>
+            <div style="background: #222; padding: 16px; border-radius: 12px; width: 250px; text-align: left;">
+                <h3 style="color:#00ffe7;">Shorts</h3>
+                <p style="color:#ccc;">Fast-action cutdowns with punchy transitions and social-platform polish.</p>
+            </div>
+            <div style="background: #222; padding: 16px; border-radius: 12px; width: 250px; text-align: left;">
+                <h3 style="color:#00ffe7;">Gaming Edits</h3>
+                <p style="color:#ccc;">Dynamic highlights, VFX, and storytelling for gaming channels.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" style="padding: 50px 20px; background: #1e1e1e; text-align: center;">
+        <h2 style="color:#00ffe7; margin-bottom: 2rem;">What Clients Say</h2>
+        <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+            <div style="background: #232323; border-radius: 12px; padding: 20px; max-width: 300px; text-align: left;">
+                <p style="color:#e2e8f0; font-style: italic;">"Fast delivery and insane quality. My YouTube CTR improved instantly."</p>
+                <p style="color:#00ffe7; margin-top: 10px;">– Small Creator</p>
+            </div>
+            <div style="background: #232323; border-radius: 12px; padding: 20px; max-width: 300px; text-align: left;">
+                <p style="color:#e2e8f0; font-style: italic;">"Turned my raw gameplay into cinematic gold. Highly recommend!"</p>
+                <p style="color:#00ffe7; margin-top: 10px;">– Gamer</p>
+            </div>
+            <div style="background: #232323; border-radius: 12px; padding: 20px; max-width: 300px; text-align: left;">
+                <p style="color:#e2e8f0; font-style: italic;">"Professional edits that made my brand stand out. Worth every penny."</p>
+                <p style="color:#00ffe7; margin-top: 10px;">– Business Owner</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="why-choose" style="padding: 50px 20px; background: #181818; text-align: center;">
+        <h2 style="color:#00ffe7; margin-bottom: 2rem;">Why Choose ACE editz?</h2>
+        <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+            <div style="max-width: 250px;">
+                <h3 style="color:#fff;">⚡ Fast Delivery</h3>
+                <p style="color:#ccc;">24–48 hour turnaround on most projects.</p>
+            </div>
+            <div style="max-width: 250px;">
+                <h3 style="color:#fff;">🎯 YouTube-Focused</h3>
+                <p style="color:#ccc;">Edits optimized for retention, CTR, and engagement.</p>
+            </div>
+            <div style="max-width: 250px;">
+                <h3 style="color:#fff;">💬 Easy Communication</h3>
+                <p style="color:#ccc;">Direct collaboration via email, Discord, or phone.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="stats" style="padding: 50px 20px; background: #1e1e1e; text-align: center;">
+        <h2 style="color:#00ffe7; margin-bottom: 2rem;">Proven Results</h2>
+        <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
+            <div>
+                <h3 style="color:#00ffe7; font-size: 2rem;">50+</h3>
+                <p style="color:#ccc;">Videos Edited</p>
+            </div>
+            <div>
+                <h3 style="color:#00ffe7; font-size: 2rem;">2+</h3>
+                <p style="color:#ccc;">Years Experience</p>
+            </div>
+            <div>
+                <h3 style="color:#00ffe7; font-size: 2rem;">100%</h3>
+                <p style="color:#ccc;">Client Satisfaction</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="guarantee" style="padding: 50px 20px; background: #181818; text-align: center;">
+        <h2 style="color:#00ffe7; margin-bottom: 2rem;">Risk-Free Guarantee</h2>
+        <p style="color:#ccc; max-width: 600px; margin: 0 auto 2rem;">Not satisfied? I’ll fix it until you are. 1 free revision guaranteed on all plans.</p>
+        <div style="background: #232323; border-radius: 12px; padding: 20px; max-width: 400px; margin: 0 auto;">
+            <p style="color:#e2e8f0;">"Your satisfaction is my priority. Let's create something amazing together."</p>
+        </div>
+    </section>
+
+    <section id="thumbnails" style="padding: 50px 20px; background: #1e1e1e; text-align: center;">
+        <h2 style="color:#00ffe7; margin-bottom: 2rem;">Thumbnail & Style Previews</h2>
+        <p style="color:#ccc; max-width: 800px; margin: 0 auto 3rem;">Check out my thumbnail designs and editing styles for gaming content.</p>
+        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjExNCIgdmlld0JveD0iMCAwIDIwMCAxMTQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTE0IiBmaWxsPSIjMDAwIi8+Cjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiMwMGZmZTciIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5UaHVtYm5haWwgMTwvdGV4dD4KPC9zdmc+" alt="Thumbnail 1" style="border-radius: 8px;">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjExNCIgdmlld0JveD0iMCAwIDIwMCAxMTQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTE0IiBmaWxsPSIjMDAwIi8+Cjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiMwMGZmZTciIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5Db2xvciBHcmFkaW5nPC90ZXh0Pgo8L3N2Zz4=" alt="Color Grading Sample" style="border-radius: 8px;">
+            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjExNCIgdmlld0JveD0iMCAwIDIwMCAxMTQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMTE0IiBmaWxsPSIjMDAwIi8+Cjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiMwMGZmZTciIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIj5UZXh0IEFuaW1hdGlvbjwvdGV4dD4KPC9zdmc+" alt="Text Animation" style="border-radius: 8px;">
+        </div>
+    </section>
+
+    <section id="pricing" style="padding: 50px 20px; background: #121212; text-align: center;">
+        <h2 style="color:#00ffe7; margin-bottom:.25rem;">Pricing</h2>
+        <p style="color:#ccc; max-width:760px; margin:0 auto 24px;">Transparent packages based on ACE's experience and professional software workflow. All prices are market-friendly while delivering high-quality results.</p>
+        <div id="pricing-grid" style="display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 16px; max-width:980px; margin:0 auto; text-align:left;">
+            <div class="pricing-card selected" data-plan="Starter" style="background:#222; border:1px solid #334155; border-radius:12px; padding:16px; cursor:pointer;">
+                <div style="font-size:0.9rem; letter-spacing:1px; text-transform:uppercase; color:#7dd3fc;">Starter</div>
+                <div style="font-weight:700; font-size:1.5rem; color:#00ffe7; margin:6px 0;">₹2,499</div>
+                <div style="color:#d1d5db;">Best for short reels and quick edits.</div>
+                <ul style="color:#e2e8f0; margin:10px 0;padding-left:18px;line-height:1.5;">
+                    <li>Up to 2 min footage</li>
+                    <li>Basic cut, trim, transitions</li>
+                    <li>1 revision</li>
+                </ul>
+                <div style="font-size:.85rem; color:#94a3b8;">Tools: Kdenlive, FL Studio</div>
+            </div>
+            <div class="pricing-card popular" data-plan="Pro" style="background:#222; border:2px solid #00ffe7; border-radius:12px; padding:16px; cursor:pointer; position: relative;">
+                <div class="badge-popular" style="position:absolute; top:-10px; right:-10px; background:#00ffe7; color:#181818; font-size:0.75rem; padding:4px 8px; border-radius:999px;">⭐ Most Popular</div>
+                <div style="font-size:0.9rem; letter-spacing:1px; text-transform:uppercase; color:#7dd3fc;">Pro</div>
+                <div style="font-weight:700; font-size:1.5rem; color:#00ffe7; margin:6px 0;">₹5,999</div>
+                <div>Best for full YouTube edits and branded content.</div>
+                <ul style="margin:10px 0;padding-left:18px;line-height:1.5; color:#e2e8f0;">
+                    <li>Up to 10 min footage</li>
+                    <li>Color grading + transitions</li>
+                    <li>2 revisions + audio mix</li>
+                </ul>
+                <div style="font-size:.85rem; color:#94a3b8;">Tools: DaVinci Resolve, Natron, FL Studio</div>
+            </div>
+            <div class="pricing-card" data-plan="Premium" style="background:#222; border:1px solid #334155; border-radius:12px; padding:16px; cursor:pointer;">
+                <div style="font-size:0.9rem; letter-spacing:1px; text-transform:uppercase; color:#7dd3fc;">Premium</div>
+                <div style="font-weight:700; font-size:1.5rem; color:#00ffe7; margin:6px 0;">₹9,500</div>
+                <div style="color:#d1d5db;">Best for high-end brand launches and cinematic videos.</div>
+                <ul style="color:#e2e8f0; margin:10px 0;padding-left:18px;line-height:1.5;">
+                    <li>Unlimited footage</li>
+                    <li>Advanced VFX + motion graphics</li>
+                    <li>3 revisions + full audio design</li>
+                </ul>
+                <div style="font-size:.85rem; color:#94a3b8;">Tools: DaVinci Resolve, Blender, Natron, FL Studio</div>
+            </div>
+        </div>
+        <div id="selected-plan" style="max-width:700px; margin:18px auto 0; background:#111827; border:1px solid #334155; border-radius:12px; padding:14px; text-align:left;">
+            <div style="font-size:0.85rem; color:#7dd3fc; text-transform:uppercase; letter-spacing:1px;">Selected Plan</div>
+            <div style="font-size:1.25rem; color:#fff; margin:6px 0;" id="selected-plan-name">Starter</div>
+            <div style="color:#d1d5db;" id="selected-plan-details">Great for quick social videos with basic edit, transitions, and one revision.</div>
+        </div>
+        <a href="mailto:acegamingyt6967@gmail.com" class="btn" style="margin-top:20px;">Let’s Make Your Video Go Viral</a>
+    </section>
+
+    <section id="about" style="padding: 50px 20px; background: #181818; text-align: center;">
+        <h2 style="color:#00ffe7;">About ACE editz</h2>
+        <p style="max-width:900px; margin: 0 auto; color:#ccc; font-size:1.05rem; line-height:1.7; text-align:left;">
+            ACE editz is a dedicated freelance video editor in India, focused on creating polished, professional visuals for YouTube, social media, and business branding. With a strong workflow built around DaVinci Resolve, Kdenlive, Natron, and Blender, ACE editz blends cinematic video editing, precise color grading, and advanced visual effects to bring every story to life. Audio quality is also a top priority—using FL Studio for composition, mixing, and soundtrack finishing ensures your projects sound as strong as they look. From rough footage to final deliverables, ACE editz provides fast turnaround, communication-focused collaboration, and tailored edits designed to match your style and goals. Ideal for creators who need a video editor for YouTube, gaming video editor support, and youtube shorts editor expertise.
+        </p>
+    </section>
+
+    <section id="contact" style="padding: 50px 20px; background: #1e1e1e; text-align: center;">
+        <h2 style="color:#00ffe7;">Contact</h2>
+        <p style="color:#ccc;">Ready to start your project? Fill the form below, or use one of these options.</p>
+        <form action="https://formspree.io/f/mrgrynrl" method="POST" style="max-width:560px; margin: 0 auto 30px; text-align:left;">
+            <label style="display:block; color:#ccc; margin-bottom:8px;">Name</label>
+            <input type="text" name="name" required style="width:100%; padding:10px; margin-bottom:12px; border-radius:8px; border:1px solid #334155; background:#121212; color:#fff;">
+            <label style="display:block; color:#ccc; margin-bottom:8px;">Email</label>
+            <input type="email" name="email" required style="width:100%; padding:10px; margin-bottom:12px; border-radius:8px; border:1px solid #334155; background:#121212; color:#fff;">
+            <label style="display:block; color:#ccc; margin-bottom:8px;">Project Brief</label>
+            <textarea name="message" rows="4" required style="width:100%; padding:10px; margin-bottom:12px; border-radius:8px; border:1px solid #334155; background:#121212; color:#fff;"></textarea>
+            <button type="submit" class="btn" style="width:100%;">Send Request</button>
+        </form>
+        <p style="color:#ccc; margin-top: 0;">Or email directly: <a href="mailto:acegamingyt6967@gmail.com" style="color:#00ffe7;">acegamingyt6967@gmail.com</a></p>
+        <ul style="list-style:none; padding:0; margin: 1rem auto; max-width:360px; color:#fff; text-align:left;">
+          <li><strong>Phone:</strong> <a href="tel:+919451108477" style="color:#00ffe7; text-decoration:none;">+91 94511 08477</a></li>
+          <li><strong>Discord:</strong> <span style="color:#fff;">YourDiscord#1234</span></li>
+          <li><strong>Instagram:</strong> <a href="https://instagram.com/yourusername" target="_blank" rel="noopener" style="color:#00ffe7; text-decoration:none;">instagram.com/yourusername</a></li>
+        </ul>
+    </section>
+
+    <footer>
+        &copy; 2025 ACE editz. All rights reserved.
+    </footer>
+
+    <script>
+      const planData = {
+        Starter: 'Great for quick social videos with basic edit, transitions, and one revision.',
+        Pro: 'Ideal for full YouTube videos with professional color grading, audio mix, and two revisions.',
+        Premium: 'Perfect for cinematic, brand-level projects with VFX, motion graphics, and full audio design.'
+      };
+
+      document.querySelectorAll('.pricing-card').forEach(card => {
+        card.addEventListener('click', () => {
+          document.querySelectorAll('.pricing-card').forEach(c => c.style.borderColor = '#334155');
+          card.style.borderColor = '#00ffe7';
+          card.style.background = '#111827';
+          card.style.boxShadow = '0 0 0 2px rgba(0,255,231,.15)';
+          document.querySelectorAll('.pricing-card').forEach(c => {
+            if (c !== card) {
+              c.style.background = '#222';
+              c.style.boxShadow = 'none';
+            }
+          });
+
+          const selectedName = card.dataset.plan;
+          document.getElementById('selected-plan-name').textContent = selectedName;
+          document.getElementById('selected-plan-details').textContent = planData[selectedName];
+        });
+      });
+
+      // Intersection Observer for animations (varied per section)
+      const animationMap = {
+        'scale': 'animate-scaleIn',
+        'slide': 'animate-slideInRight',
+        'fade': 'animate-fadeInUp'
+      };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const variant = entry.target.dataset.animation || 'fade';
+            entry.target.classList.add(animationMap[variant] || 'animate-fadeInUp');
+            observer.unobserve(entry.target); // stops repeating
+          }
+        });
+      }, { threshold: 0.15 });
+
+      const animateEls = document.querySelectorAll('.hero, .hero h2, .hero p, .hero .btn, .features, .feature-card, #before-after, #portfolio, #testimonials, #why-choose, #stats, #guarantee, #pricing, #about, #contact');
+      animateEls.forEach((el, index) => {
+        el.style.setProperty('--stagger-delay', `${index * 0.08}s`);
+        observer.observe(el);
+      });
+
+      // Logo click -> scroll to top
+      const logo = document.getElementById('logo-link');
+      if (logo) {
+        logo.addEventListener('click', (e) => {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      // Dynamic navbar active state on scroll
+      const navLinks = document.querySelectorAll('nav a');
+      const sectionIds = ['before-after', 'features', 'portfolio', 'testimonials', 'why-choose', 'stats', 'guarantee', 'pricing', 'about', 'contact'];
+
+      function setActiveNav() {
+        const scrollPos = window.scrollY + 80;
+        let current = 'features';
+        sectionIds.forEach(id => {
+          const section = document.getElementById(id);
+          if (section && section.offsetTop <= scrollPos) {
+            current = id;
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+        });
+      }
+
+      setActiveNav();
+      window.addEventListener('scroll', setActiveNav);
+
+      // Scroll progress bar
+      window.addEventListener('scroll', () => {
+        const scrolled = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+        document.getElementById('progress-bar').style.width = scrolled + '%';
+      });
+
+      // Cursor glow effect
+      document.addEventListener('mousemove', (e) => {
+        const glow = document.getElementById('cursor-glow');
+        glow.style.left = (e.clientX - 10) + 'px';
+        glow.style.top = (e.clientY - 10) + 'px';
+      });
+    </script>
+</body>
+</html>
